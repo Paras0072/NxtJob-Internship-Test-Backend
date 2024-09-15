@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.0.38",
+    "@prisma/client": "^5.19.1",
     "hono": "^4.6.1",
     "prisma": "^5.19.1"
   }

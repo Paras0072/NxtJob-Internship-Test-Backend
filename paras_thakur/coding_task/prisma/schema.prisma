@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  email       String   @unique
+  password    String
+  documents   Document[]
+  permission  Permission[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+ 
+
+model Document {
+  id             Int       @id @default(autoincrement())
+  title          String
+  content        String
+  owner          User      @relation(fields: [ownerId], references: [id])
+  ownerId        Int
+  permissions    Permission[]
+  currentVersion Int       @default(1)
+  versions       DocumentVersion[]  // Relation to the DocumentVersion model
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Permission {
+  id         Int       @id @default(autoincrement())
+  user       User      @relation(fields: [userId], references: [id])
+  document   Document  @relation(fields: [documentId], references: [id])
+  userId     Int
+  documentId Int
+  canEdit    Boolean   @default(false)
+  canView    Boolean   @default(true)
+}
+
+model DocumentVersion {
+  id        Int       @id @default(autoincrement())
+  content   String
+  document  Document  @relation(fields: [documentId], references: [id])
+  documentId Int
+  createdAt DateTime  @default(now())
+}
