@@ -1,0 +1,17 @@
+
+1. How do you stay updated on backend development topics and remain active in the community? (Forums/Discord/Slack/Meetups/Twitter/Blogs)
+-> Staying updated on backend development topics and actively participating in the community is essential for continuous learning and professional growth. Here are some effective ways to stay informed:
+ 
+   Stack Overflow: This site is a great resource for answering particular technical queries and sharing your expertise to benefit others.
+   GitHub Discussions: You may interact with developers and make contributions to a lot of open-source projects by participating in the lively discussion threads on GitHub.
+   LinkedIn: To keep up with the newest trends and job openings, connect with backend developers, join groups that interest you, and follow influential people in the field.
+   X(Twitter): To learn about new tools, methods, and industry news, follow backend development professionals, organizations, and conferences.
+
+ You may improve your abilities, widen your network, and support the community's expansion by engaged in these communities and keeping up with the most recent advancements in backend development.
+ 
+2. What are your most-used IDE and keyboard shortcuts when coding?
+-> My most used IDE is VsCode and most used keyboard shortcuts are Ctrl+C , Ctrl + V ,Ctrl + z ,  
+
+3. How do you approach the design and implementation of a scalable backend system? Feel free to attach code snippets for better explanation.
+-> Desiging of a backend system mostly depends on frontend. My aproach is to find out the requirements for the schema
+   of the database then according to it i will make the controllers and routes.
